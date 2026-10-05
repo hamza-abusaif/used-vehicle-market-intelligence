@@ -1,3 +1,6 @@
 .venv/
 __pycache__/
 .ipynb_checkpoints/
+*.VSIXPackage
+VSCodeUserSetup-*.exe
+python-*-amd64.exe
