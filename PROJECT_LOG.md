@@ -163,3 +163,29 @@ This means the numeric color values and invalid transmission values are likely s
 
 ### Next Step
 Begin exploratory data analysis in `03_exploratory_analysis.ipynb`.
+
+
+## Nov 24, 2026
+
+### Completed
+- Started exploratory data analysis using the processed vehicle dataset
+- Analyzed selling-price distribution
+- Examined vehicle age, mileage, and condition relationships with selling price
+- Compared median selling prices across major vehicle makes
+- Identified and corrected additional manufacturer aliases discovered during EDA
+- Compared MMR with actual selling price
+- Found a very strong correlation between MMR and selling price
+- Investigated extreme differences between MMR and actual sale prices
+- Began examining repeated VINs with unusually large price differences
+
+### Key Findings
+- Median selling price: $12,100
+- Mean selling price: about $13,611
+- Selling price generally decreases with age and mileage
+- Selling price generally increases with vehicle condition
+- MMR and selling price correlation: about 0.984
+- Most sales occur relatively close to MMR
+- Some extreme MMR deviations appear suspicious and require further investigation
+
+### Next Step
+Investigate repeated VINs with large selling-price differences and determine whether any extreme transactions should be treated as data-quality issues.
