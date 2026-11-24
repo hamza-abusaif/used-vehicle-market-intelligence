@@ -99,3 +99,67 @@ This means the numeric color values and invalid transmission values are likely s
 - Decide how to handle the 26 malformed Volkswagen Jetta records.
 - Standardize categorical values such as body-style capitalization.
 - Begin the data-cleaning notebook.
+
+## October 13, 2026
+
+### Completed
+- Finished the initial raw-data audit.
+- Started the data-cleaning notebook.
+- Created a separate working copy of the raw dataset for cleaning.
+- Removed 26 malformed Volkswagen Jetta records with shifted columns.
+- Normalized vehicle condition scores from mixed formats into a consistent 1.0–5.0 scale.
+- Standardized capitalization for vehicle makes using the most common original spelling.
+- Standardized capitalization for vehicle body styles using the most common original spelling.
+- Confirmed that transmission categories are valid after malformed records were removed.
+- Began investigating em-dash values in the exterior color column.
+
+### Key Findings
+- The cleaned dataset currently contains 558,811 rows.
+- Vehicle condition values now follow a consistent 1.0–5.0 scale.
+- Make categories were reduced from 96 raw values to 66 standardized categories.
+- Body-style categories were reduced from 87 raw values to 45 standardized categories after malformed records were removed.
+- Exterior color values represented by `—` appear in otherwise normally structured records, but their meaning has not yet been confirmed.
+
+### Learned
+- Cleaning should be based on evidence from the audit rather than automatic transformations.
+- `.loc` can modify selected rows and columns based on a condition.
+- Boolean masks can isolate records needing specific transformations.
+- Category labels can be standardized using the most frequently occurring original spelling.
+- Raw columns can be preserved while creating cleaned versions for traceability.
+
+### Next
+- Finish investigating `—` exterior color values.
+- Decide how to handle missing and suspicious odometer values.
+- Decide how to handle extreme selling prices such as $1 transactions.
+- Continue standardizing remaining categorical variables.
+- Save the cleaned dataset to `data/processed/` once cleaning decisions are complete.
+
+## Nov 1, 2026
+
+### Completed
+- Finished major data cleaning decisions
+- Removed 26 malformed Jetta records
+- Normalized condition scores to 1.0–5.0
+- Standardized capitalization for make, model, body, and trim
+- Converted exterior/interior `—` placeholders to missing values
+- Treated 999999 odometer values as unreliable/missing
+- Treated $1 selling prices as unreliable/missing
+- Investigated missing vehicle identity fields
+- Parsed sale dates into datetime format
+- Created `sale_year`, `vehicle_age`, and `identity_missing`
+- Completed final validation checks
+- Created processed dataset for later analysis
+
+### Key Results
+- Raw rows: 558,837
+- Cleaned rows: 558,811
+- Rows removed: 26
+- Duplicate rows: 0
+- Condition range: 1.0–5.0
+- Unique cleaned makes: 66
+- Unique cleaned models: 851
+- Unique cleaned body styles: 45
+- Unique cleaned trims: 1,887
+
+### Next Step
+Begin exploratory data analysis in `03_exploratory_analysis.ipynb`.
